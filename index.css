@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+h2{
+    padding: 12px 0;
+    font-size: 25px;
+}
+li{
+    list-style: none;
+    margin: 10px 0;
+}
+button{
+    background-color: whitesmoke;
+    border: 0;
+    color: white;
+    font-size: 15px;
+    width: 60px;
+    margin: 10px 0;
+    cursor: pointer;
+    outline:none;
+}
+input[type="text"] {
+    margin-bottom: 10px;
+    font-size: 15px;
+    line-height: 18px;
+    height: 18px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    background: #fdf4f4;
+    border-radius: 5px;
+    outline: none;
+}
+#container{
+    width: 40%;
+    margin: 20px auto;
+}
+#title{
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+    padding: 10px;
+    color: plum;
+    background-color: rgb(244, 233, 233);
+    text-shadow: 1px 1px 3px rgb(83, 49, 83);
+    box-shadow: 5px 5px 50px 10px rgba(127, 118, 127, 0.459);
+}
+#portfolio{
+    display: flex;
+    justify-content: space-between;
+}
+#body{
+    box-shadow: 5px 5px 50px 10px rgba(127, 118, 127, 0.459);
+    padding: 10px;
+    color: white;
+    background-color: rgb(152, 0, 152);
+}
+#mytasks{
+    position: relative;
+}
+#addtask{
+    background-color: plum;
+    padding: 5px;
+    width: auto;
+    text-shadow: 1px 1px 3px rgba(245, 245, 245, 0.831);
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 70px;
+}
+#newentry{
+    margin-top: 50px;
+    background-color: white;
+    color: black;
+    padding: 10px;
+}
+
+#colorcode{
+    display: flex;
+    justify-content: space-between;
+}

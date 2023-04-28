@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>Task Manager</title>
+</head>
+<body>
+    <div id="container">
+        <div id="title">
+            <h1>Task Manager</h1>
+        </div>
+        <div id="portfolio">
+            <img src="" alt="">
+            <div class="">
+                <!-- include code for digital clock -->
+            </div>
+        </div>
+        <div id="body">
+            <div id="mytasks">
+                <hr><h2>My Tasks</h2><hr>
+                <div id="addtask">
+                    <h4> Add Task</h4>
+                </div>
+                <div id="newentry">
+                    <input type="text" name="tasktext" id="tasktext" placeholder="Task Name">
+                    <h4>Status</h4>
+                </div>
+            </div>
+            <div id="taskadded">
+                <h2>Current Tasks</h2>
+                <hr>
+                <ul id="taskincomplete">
+                    <li>
+                        <input type="checkbox">
+                        <label>Take mum shopping</label>
+                        <!-- <input type="text"> -->
+                        <button class="edit">Edit</button>
+                        <button class="delete">Delete</button>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <label>Take mum shopping</label>
+                        <!-- <input type="text"> -->
+                        <button class="edit">Edit</button>
+                        <button class="delete">Delete</button>
+                    </li>
+                </ul>          
+            </div>
+            <div class="completedtasks">
+                <h2>Completed Tasks</h2>
+                <hr>
+                <ul id="taskcomplete">
+                <li>
+                    <input type="checkbox" checked>
+                    <label>See the Doctor</label>
+                    <!-- <input type="text"> -->
+                    <button class="edit">Edit</button>
+                    <button class="delete">Delete</button>
+                </li>
+          </ul>
+          <hr>
+          <div id="colorcode">
+            <button id="blue">Blue</button>
+            <button id="dark">Dark</button>
+            <button id="pink">pink</button>
+            <button id="gray">gray</button>
+          </div>
+        </div>
+        </div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
