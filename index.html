@@ -13,9 +13,10 @@
             <h1>Task Manager</h1>
         </div>
         <div id="portfolio">
-            <img src="" alt="">
-            <div class="">
-                <!-- include code for digital clock -->
+            <img src="./bud.jpg" alt="">
+            <div class="wrapper">
+                <div id = "digital-clock"> </div>
+                <div id="date"></div>
             </div>
         </div>
         <div id="body">
@@ -26,7 +27,7 @@
                 </div>
                 <div id="newentry">
                     <input type="text" name="tasktext" id="tasktext" placeholder="Task Name">
-                    <h4>Status</h4>
+                    <!-- <h4>Status</h4> -->
                 </div>
             </div>
             <div id="taskadded">
@@ -37,19 +38,19 @@
                         <input type="checkbox">
                         <label>Take mum shopping</label>
                         <!-- <input type="text"> -->
-                        <button class="edit">Edit</button>
-                        <button class="delete">Delete</button>
+                        <button id="edit">Edit</button>
+                        <button id="delete">Delete</button>
                     </li>
                     <li>
                         <input type="checkbox">
                         <label>Take mum shopping</label>
                         <!-- <input type="text"> -->
-                        <button class="edit">Edit</button>
-                        <button class="delete">Delete</button>
+                        <button id="edit">Edit</button>
+                        <button id="delete">Delete</button>
                     </li>
                 </ul>          
             </div>
-            <div class="completedtasks">
+            <div id="completedtasks">
                 <h2>Completed Tasks</h2>
                 <hr>
                 <ul id="taskcomplete">
@@ -57,18 +58,18 @@
                     <input type="checkbox" checked>
                     <label>See the Doctor</label>
                     <!-- <input type="text"> -->
-                    <button class="edit">Edit</button>
-                    <button class="delete">Delete</button>
+                    <button id="edit">Edit</button>
+                    <button id="delete">Delete</button>
                 </li>
-          </ul>
-          <hr>
-          <div id="colorcode">
-            <button id="blue">Blue</button>
-            <button id="dark">Dark</button>
-            <button id="pink">pink</button>
-            <button id="gray">gray</button>
-          </div>
-        </div>
+                </ul>
+                <hr>
+            </div>
+            <div id="colorcode">
+                <button id="blue" onclick="blue()">Blue</button>
+                <button id="dark" onclick="dark()">Dark</button>
+                <button id="pink" onclick="pink()">pink</button>
+                <button id="gray" onclick="gray()">gray</button>
+            </div>
         </div>
     </div>
     <script src="./index.js"></script>

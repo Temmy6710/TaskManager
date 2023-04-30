@@ -11,14 +11,16 @@ li{
     margin: 10px 0;
 }
 button{
-    background-color: whitesmoke;
+    background-color: rgba(245, 245, 245, 0.626);
     border: 0;
-    color: white;
+    /* color: white; */
     font-size: 15px;
     width: 60px;
-    margin: 10px 0;
+    margin: 5px;
     cursor: pointer;
     outline:none;
+    border-radius: 5px;
+    color: rgb(69, 62, 62);
 }
 input[type="text"] {
     margin-bottom: 10px;
@@ -31,6 +33,9 @@ input[type="text"] {
     border-radius: 5px;
     outline: none;
 }
+input[type="checkbox"]{
+    margin: 0 10px;
+}
 #container{
     width: 40%;
     margin: 20px auto;
@@ -41,12 +46,34 @@ input[type="text"] {
     padding: 10px;
     color: plum;
     background-color: rgb(244, 233, 233);
-    text-shadow: 1px 1px 3px rgb(83, 49, 83);
+    text-shadow: 1px 1px 3px rgb(37, 25, 37);
     box-shadow: 5px 5px 50px 10px rgba(127, 118, 127, 0.459);
 }
 #portfolio{
     display: flex;
     justify-content: space-between;
+    background-color: rgb(152, 0, 152);
+    box-shadow: 5px 5px 50px 10px rgba(127, 118, 127, 0.459);
+}
+#portfolio img{
+    width: 15%;
+    height: auto;
+    padding: 10px;
+    border-radius: 50%;
+}
+.wrapper{
+    width: auto;
+    margin: 20px 15px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-align: center;
+    color: white;
+ }
+#digital-clock {
+    padding-bottom: 10px;
+    font-size: 20px;
+}
+#date{
+    font-size: 18px;
 }
 #body{
     box-shadow: 5px 5px 50px 10px rgba(127, 118, 127, 0.459);
@@ -59,13 +86,14 @@ input[type="text"] {
 }
 #addtask{
     background-color: plum;
+    color: white;
     padding: 5px;
     width: auto;
     text-shadow: 1px 1px 3px rgba(245, 245, 245, 0.831);
     cursor: pointer;
     position: absolute;
     right: 0;
-    top: 70px;
+    top: 68px;
 }
 #newentry{
     margin-top: 50px;
@@ -73,7 +101,26 @@ input[type="text"] {
     color: black;
     padding: 10px;
 }
-
+#delete:hover{
+    color: red;
+    /* background-color: red; */
+}
+#taskcomplete label{
+    text-decoration: line-through;
+    color: #b7a8a8;
+}
+#blue:hover{
+    color: blue;
+}
+#dark:hover{
+    color: black;
+}
+#pink:hover{
+    color: plum;
+}
+#gray:hover{
+    color: gray;
+}
 #colorcode{
     display: flex;
     justify-content: space-between;
