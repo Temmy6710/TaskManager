@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./taskmanager.css">
     <title>Task Manager</title>
 </head>
 <body>
@@ -33,33 +33,26 @@
             <div id="taskadded">
                 <h2>Current Tasks</h2>
                 <hr>
-                <ul id="taskincomplete">
-                    <li>
+                <ul id="taskincomplete" class="container">
+                    <li id="test">
                         <input type="checkbox">
                         <label>Take mum shopping</label>
-                        <!-- <input type="text"> -->
-                        <button id="edit">Edit</button>
-                        <button id="delete">Delete</button>
-                    </li>
-                    <li>
-                        <input type="checkbox">
-                        <label>Take mum shopping</label>
-                        <!-- <input type="text"> -->
-                        <button id="edit">Edit</button>
-                        <button id="delete">Delete</button>
+                        <input type="text" style="display: none">
+                        <button id="edit" onclick="edit_element()">Edit</button>
+                        <button id="delete" onclick="delete_element()">Delete</button>
                     </li>
                 </ul>          
             </div>
             <div id="completedtasks">
                 <h2>Completed Tasks</h2>
                 <hr>
-                <ul id="taskcomplete">
+                <ul id="taskcomplete" class="container">
                 <li>
-                    <input type="checkbox" checked>
+                    <!-- <input type="checkbox" checked>
                     <label>See the Doctor</label>
-                    <!-- <input type="text"> -->
+                    <input type="text">
                     <button id="edit">Edit</button>
-                    <button id="delete">Delete</button>
+                    <button id="delete">Delete</button> -->
                 </li>
                 </ul>
                 <hr>
@@ -72,6 +65,6 @@
             </div>
         </div>
     </div>
-    <script src="./index.js"></script>
+    <script src="./taskmanager.js"></script>
 </body>
 </html>

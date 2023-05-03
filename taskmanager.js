@@ -35,8 +35,60 @@ function update(t) {
     }
 }
 Time();
+var Task = new Array("Clean House", "Wash Car", "Wash plates", "Wash clothes", "Do laundry","Eat breakfast");
+var task_container = document.getElementById('test');
+function updateUI(Task){
+    var task_content = '';
+    var i=0;
+    for (i in Task){
+        // console.log(Task[i]);
+        // var item = "<div>" + Task[1] + "</div>"
+        task_content = task_content + `<li id="test${i}">
+                                                <input type="checkbox">
+                                                <label id='label${i}'>${Task[i]}</label>
+                                                <input type="text" id='text${i}' style="display: none">
+                                                <button id="edit${i}" onclick="edit_element(${i})">Edit</button>
+                                                <button id="delete${i}" onclick="delete_element(${i})">Delete</button>
+                                        </li>`;
+        console.log(task_content);
+    }
+    task_container.innerHTML = task_content;
+    console.log(task_container);
+    return(task_content)
+}
+updateUI(Task)
 
-// console.log(addtask)
+
+function delete_element(i){
+    // console.log(test)
+    var del = document.getElementById('test'+i);
+    console.log(del)
+    del =  del.innerHTML = '';
+    console.log(del)
+
+    // console.log(test[i])
+}
+
+editing = true;
+function edit_element(i){
+    var label = document.getElementById('label'+i);
+    var edit = document.getElementById('text'+i);
+    // event with enter
+    if(editing == true){
+        edit.style.display = 'inline-block';
+        label.style.display = 'none';
+        edit.value = label.innerText;
+        editing = false;
+        console.log(editing)
+        console.log(edit)
+    }else{
+        edit.style.display = 'none';
+        label.style.display = 'inline-block';
+        label.innerText = edit.value;
+        editing = true;
+        console.log(edit.value)
+    }
+}
 
 var title = document.getElementById("title");
 var port = document.getElementById("portfolio");

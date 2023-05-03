@@ -2,6 +2,9 @@
     margin: 0;
     padding: 0;
 }
+:root{
+    --primary_color: #ff4
+}
 h2{
     padding: 12px 0;
     font-size: 25px;
@@ -52,6 +55,7 @@ input[type="checkbox"]{
 #portfolio{
     display: flex;
     justify-content: space-between;
+    /* background-color: var(--primary_color); */
     background-color: rgb(152, 0, 152);
     box-shadow: 5px 5px 50px 10px rgba(127, 118, 127, 0.459);
 }
@@ -95,6 +99,9 @@ input[type="checkbox"]{
     right: 0;
     top: 68px;
 }
+.container{
+    padding: 10px 0;
+}
 #newentry{
     margin-top: 50px;
     background-color: white;
@@ -104,6 +111,9 @@ input[type="checkbox"]{
 #delete:hover{
     color: red;
     /* background-color: red; */
+}
+#test button{
+    float: right;
 }
 #taskcomplete label{
     text-decoration: line-through;
