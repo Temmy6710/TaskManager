@@ -61,7 +61,7 @@ input[type="checkbox"]{
 }
 #portfolio img{
     width: 15%;
-    height: auto;
+    height: 15%;
     padding: 10px;
     border-radius: 50%;
 }
@@ -102,6 +102,9 @@ input[type="checkbox"]{
 .container{
     padding: 10px 0;
 }
+.container button{
+    float: right;
+}
 #newentry{
     margin-top: 5px;
     background-color: white;
@@ -111,9 +114,6 @@ input[type="checkbox"]{
 #delete:hover{
     color: red;
     /* background-color: red; */
-}
-.container button{
-    float: right;
 }
 #taskcomplete label{
     text-decoration: line-through;
