@@ -2,9 +2,9 @@
     margin: 0;
     padding: 0;
 }
-:root{
+/* :root{
     --primary_color: #ff4
-}
+} */
 h2{
     padding: 12px 0;
     font-size: 25px;
@@ -96,14 +96,14 @@ input[type="checkbox"]{
     text-shadow: 1px 1px 3px rgba(245, 245, 245, 0.831);
     cursor: pointer;
     position: absolute;
-    right: 0;
-    top: 68px;
+    right: 40px;
+    top: 80px;
 }
 .container{
     padding: 10px 0;
 }
 #newentry{
-    margin-top: 50px;
+    margin-top: 5px;
     background-color: white;
     color: black;
     padding: 10px;
@@ -112,7 +112,7 @@ input[type="checkbox"]{
     color: red;
     /* background-color: red; */
 }
-#test button{
+.container button{
     float: right;
 }
 #taskcomplete label{
@@ -135,3 +135,31 @@ input[type="checkbox"]{
     display: flex;
     justify-content: space-between;
 }
+@media (max-width:900px){
+#container{
+    width: 60%;
+}
+}
+@media (max-width:700px){
+    #container{
+        width: 70%;
+    }
+}
+@media (max-width:550px){
+    #container{
+        width: 80%;
+    }
+}
+@media (max-width:450px){
+    #container{
+        width: 100%;
+    }
+    #addtask{
+        right: 20px;
+    }
+}
+@media (max-width:300px){
+    #addtask{
+        right: 10px;
+    }
+    }

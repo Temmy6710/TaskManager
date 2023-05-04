@@ -22,7 +22,7 @@
         <div id="body">
             <div id="mytasks">
                 <hr><h2>My Tasks</h2><hr>
-                <div id="addtask">
+                <div id="addtask" onclick="add()">
                     <h4> Add Task</h4>
                 </div>
                 <div id="newentry">
@@ -33,7 +33,7 @@
             <div id="taskadded">
                 <h2>Current Tasks</h2>
                 <hr>
-                <ul id="taskincomplete" class="container">
+                <ul id="taskIncomplete" class="container">
                     <li id="test">
                         <input type="checkbox">
                         <label>Take mum shopping</label>
@@ -46,14 +46,14 @@
             <div id="completedtasks">
                 <h2>Completed Tasks</h2>
                 <hr>
-                <ul id="taskcomplete" class="container">
-                <li>
-                    <!-- <input type="checkbox" checked>
-                    <label>See the Doctor</label>
-                    <input type="text">
-                    <button id="edit">Edit</button>
-                    <button id="delete">Delete</button> -->
-                </li>
+                <ul id="taskComplete" class="container">
+                    <li id="done">
+                        <!-- <input type="checkbox" checked>
+                        <label>See the Doctor</label>
+                        <input type="text">
+                        <button id="edit">Edit</button>
+                        <button id="delete">Delete</button> -->
+                    </li>
                 </ul>
                 <hr>
             </div>

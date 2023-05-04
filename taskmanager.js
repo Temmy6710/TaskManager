@@ -35,59 +35,139 @@ function update(t) {
     }
 }
 Time();
-var Task = new Array("Clean House", "Wash Car", "Wash plates", "Wash clothes", "Do laundry","Eat breakfast");
-var task_container = document.getElementById('test');
-function updateUI(Task){
-    var task_content = '';
+// var Task = new Array("Clean House", "Wash Car", "Wash plates", "Wash clothes", "Do laundry","Eat breakfast");
+var Tasks = [
+    {
+        name: "Clean House",
+        status: "uncompleted",
+        color: "#ff0"
+    },
+    {
+        name: "Wash Car",
+        status: "uncompleted",
+        color: "#ff0"
+    },
+    {
+        name: "Wash plates",
+        status: "uncompleted",
+        color: "#ff0"
+    },
+    {
+        name: "Wash plates",
+        status: "uncompleted",
+        color: "#ff0"
+    },
+    {
+        name: "Do laundry",
+        status: "completed",
+        color: "#ff0"
+    },
+    {
+        name: "Eat breakfast",
+        status: "completed",
+        color: "#ff0"
+    },
+]
+var task_container_incomplete = document.getElementById('taskIncomplete');
+var task_container_complete = document.getElementById('taskComplete');
+function updateUI(){
+    var task_content_completed = '';
+    var task_content_uncompleted = '';
     var i=0;
-    for (i in Task){
-        // console.log(Task[i]);
-        // var item = "<div>" + Task[1] + "</div>"
-        task_content = task_content + `<li id="test${i}">
-                                                <input type="checkbox">
-                                                <label id='label${i}'>${Task[i]}</label>
-                                                <input type="text" id='text${i}' style="display: none">
-                                                <button id="edit${i}" onclick="edit_element(${i})">Edit</button>
-                                                <button id="delete${i}" onclick="delete_element(${i})">Delete</button>
-                                        </li>`;
-        console.log(task_content);
+    for (i in Tasks){
+        if(Tasks[i].status == 'uncompleted'){
+            task_content_uncompleted = task_content_uncompleted + `<li id="test${i}">
+                                                                        <input type="checkbox" id ='checkbox${i}' onclick = 'complete(${i})'>
+                                                                        <label id='label${i}'>${Tasks[i].name}</label>
+                                                                        <input type="text" id='text${i}' style="display: none">
+                                                                        <button id="edit${i}" onclick="edit_element(${i})">Edit</button>
+                                                                        <button id="delete${i}" onclick="delete_element(${i})">Delete</button>
+                                                                    </li>`;
+        }else{
+            task_content_completed = task_content_completed + `<li id="test${i}">
+                                                                    <input type="checkbox" id ='checkbox${i}' onclick = 'complete(${i})' checked>
+                                                                    <label id='label${i}'><s>${Tasks[i].name}</s></label>
+                                                                    <input type="text" id='text${i}' style="display: none">
+                                                                </li>`;
+        }
+        // console.log(task_content);
     }
-    task_container.innerHTML = task_content;
-    console.log(task_container);
-    return(task_content)
+    task_container_incomplete.innerHTML = task_content_uncompleted;
+    task_container_complete.innerHTML = task_content_completed;
 }
-updateUI(Task)
-
-
+updateUI();
 function delete_element(i){
-    // console.log(test)
-    var del = document.getElementById('test'+i);
-    console.log(del)
-    del =  del.innerHTML = '';
-    console.log(del)
-
+    delete Tasks[i];
+    console.log(Tasks[i])
+    updateUI();
     // console.log(test[i])
 }
 
-editing = true;
+var currentlyEditing = {
+    input: 0, 
+    contentLabel: 0
+}
+console.log(currentlyEditing)
+editing = false;
+function add(){
+    var newEntry = document.getElementById('tasktext').value
+    class newobj{
+        constructor(name,status,color){
+            this.name = name;
+            this.status = status;
+            this.color = color;
+        }
+    }
+    let newobj1 = new newobj(newEntry, 'uncompleted', '#ff0')
+    console.log(newobj1);
+    Tasks.push(newobj1);
+    updateUI();
+}
+var trying = document.getElementById('tasktext')
+trying.addEventListener('keypress',function(event){
+    if (event.key ==="Enter"){
+        add()
+    }
+})
 function edit_element(i){
     var label = document.getElementById('label'+i);
-    var edit = document.getElementById('text'+i);
-    // event with enter
-    if(editing == true){
-        edit.style.display = 'inline-block';
+    var text = document.getElementById('text'+i);
+    currentlyEditing.input = text
+    currentlyEditing.contentLabel =  label
+    console.log( currentlyEditing.contentLabel)
+    if(editing == false){
+        text.style.display = 'inline-block';
         label.style.display = 'none';
-        edit.value = label.innerText;
-        editing = false;
-        console.log(editing)
-        console.log(edit)
-    }else{
-        edit.style.display = 'none';
-        label.style.display = 'inline-block';
-        label.innerText = edit.value;
+        text.value = label.innerText;
         editing = true;
-        console.log(edit.value)
+        // console.log(editing)
+        // console.log(text)
+    }else{
+        text.style.display = 'none';
+        label.style.display = 'inline-block';
+        label.innerText = text.value;
+        editing = false;
+        // console.log(text.value)
     }
+}
+addEventListener("keypress", function(event){
+    if (event.key ==="Enter" && editing == true){
+        console.log('working')
+        // // event.preventDefault();
+        currentlyEditing.contentLabel.innerText = currentlyEditing.input.value;
+        currentlyEditing.input.style.display = 'none';
+        currentlyEditing.contentLabel.style.display = 'inline-block';
+        editing = false;
+    }
+})
+function complete(i){
+    if (Tasks[i].status == 'uncompleted'){
+        Tasks[i].status = 'completed';
+    }else{
+        Tasks[i].status = 'uncompleted';
+    }
+    updateUI();
+    console.log(Tasks[i]);
 }
 
 var title = document.getElementById("title");
